@@ -1,0 +1,31 @@
+What is an API? (messenger)
+
+- application program interface
+- structured request and response
+==================================
+
+REST API (formats message)
+
+- representational state transfer
+- architecture style for designing network applications
+- relies on stateless client server protocol (HTTP)
+- treats server objects as resources that can be created, read, updated, and deleted
+- can be used virtually by any programming language
+=====================================================================================
+
+HTTP Requests
+- GET (request data from specified source)
+- POST (submit data to be processed to a source)
+- PUT (update specified resource)
+- DELETE (delete specified source)
+- HEAD (same as get "returns header", but does not return body)
+- OPTIONS (returns supported HTTP methods)
+- PATCH (update partial resources, similar to PUT)
+=====================================================================
+
+API Endpoints
+- GET https://someurl.com/api/users GET ALL USERS
+- GET https://someurl.com/api/users/1 GET SINGLE USER
+- POST https://someurl.com/api/users ADD USERS
+- PUT https://someurl.com/api/users/1 UPDATE USER
+- DELETE https://someurl.com/api/users/1 DELETE USER

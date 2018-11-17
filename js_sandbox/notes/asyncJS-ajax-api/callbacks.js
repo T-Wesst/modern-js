@@ -5,7 +5,7 @@ const posts = [
 ];
 
 /*Synchronous
-
+=================================
 // took 2 seconds to create post
 function createPost(post) {
   setTimeout(function() {
@@ -28,15 +28,13 @@ getPosts();
 */
 
 // Asynchronous
-
-// took 2 seconds to create post
+// =====================================
 function createPost(post, callback) {
   setTimeout(function() {
     posts.push(post);
     callback();
   }, 2000);
 }
-// took 1 second to get post
 function getPosts() {
   setTimeout(function() {
     let output = "";
@@ -46,5 +44,4 @@ function getPosts() {
     document.body.innerHTML = output;
   }, 1000);
 }
-
 createPost({ title: "post three", body: "this is post three" }, getPosts);

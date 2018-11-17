@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Mike",
+    "company": "123 Design Studio",
+    "phone": "818-818-8811"
+  },
+  {
+    "id": 2,
+    "name": "Carl",
+    "company": "123 Design Makers",
+    "phone": "818-818-2211"
+  },
+  {
+    "id": 3,
+    "name": "Whitney",
+    "company": "123 Design Developers",
+    "phone": "818-818-4433"
+  }
+]

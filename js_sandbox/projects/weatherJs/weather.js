@@ -1,22 +1,20 @@
 class Weather {
-  constructor(city, state) {
-    this.apiKey = "99dfe35fcb7de1ee";
+  constructor(city) {
+    this.apiKey = "909eac6cb4881e92ed895896fcc78b53";
     this.city = city;
-    this.state = state;
   }
   // fetch weather from api
   async getWeather() {
     const response = await fetch(
-      `http://api.wunderground.com/api/${this.apiKey}/conditions/g/${
-        this.state
-      }/${this.city}.json`
+      `http://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${
+        this.apiKey
+      }&units=metric`
     );
     const responseData = await response.json();
     return responseData.current_observation;
   }
   // change weather location
-  changeLocation(city, state) {
+  changeLocation(city) {
     this.city = city;
-    this.state = state;
   }
 }

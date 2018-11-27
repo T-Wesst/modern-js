@@ -3,7 +3,7 @@ class Weather {
     this.apiKey = "909eac6cb4881e92ed895896fcc78b53";
     this.city = city;
   }
-  // fetch weather from api
+  // Fetch weather from API
   async getWeather() {
     const response = await fetch(
       `http://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${
@@ -11,9 +11,9 @@ class Weather {
       }&units=metric`
     );
     const responseData = await response.json();
-    return responseData.current_observation;
+    return responseData;
   }
-  // change weather location
+  // Change weather location
   changeLocation(city) {
     this.city = city;
   }

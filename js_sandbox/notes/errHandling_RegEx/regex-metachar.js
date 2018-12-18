@@ -30,11 +30,19 @@ regex = /hel{2,}o/i; // must occur >= {x} times
 regex = /^([0-9]x){3}$/i; // must be exactly {numX} 3 times
 
 // shorthand character classes
-regex = /\w/i; // word character - alphanumeric (any letter || number) or _
-regex = /\w+/i; // + = one or more
-regex = /\W/i; // none word character
-regex = /\d/i; // match any digit
-regex = /\d+/i; // match any digit 0 or more times
+regex = /\w/; // word character - alphanumeric (any letter || number) or _
+regex = /\w+/; // + = one or more
+regex = /\W/; // none word character
+regex = /\d/; // match any digit
+regex = /\d+/; // match any digit 0 or more times
+regex = /\D/; // match any non digit
+regex = /\s/; // match whitespace character
+regex = /\S/; // match non whitespace character
+regex = /Hell\b/i; // word boundary
+
+// Assertions
+regex = /x(?=y)/; // match x only if followed by y
+regex = /x(?!y)/; // match x only if NOT followed by y
 
 // string to match
 const str = "Hello World";

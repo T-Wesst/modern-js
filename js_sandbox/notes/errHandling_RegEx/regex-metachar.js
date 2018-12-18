@@ -29,6 +29,13 @@ regex = /hel{2,}o/i; // must occur >= {x} times
 // parenthesis () - grouping
 regex = /^([0-9]x){3}$/i; // must be exactly {numX} 3 times
 
+// shorthand character classes
+regex = /\w/i; // word character - alphanumeric (any letter || number) or _
+regex = /\w+/i; // + = one or more
+regex = /\W/i; // none word character
+regex = /\d/i; // match any digit
+regex = /\d+/i; // match any digit 0 or more times
+
 // string to match
 const str = "Hello World";
 // log resulta

@@ -48,4 +48,4 @@ const ItemCtrl = (function(){
 })()
 
 ItemCtrl.add({id: 1, name: 'John'}) // logs Item added
-console.log(ItemCtrl.get(1))
+console.log(ItemCtrl.get(1)) // logs obj

@@ -47,7 +47,7 @@ regex = /x(?!y)/; // match x only if NOT followed by y
 
 // string to match
 const str = 'Hello World';
-// log resulta
+// log results
 const result = regex.exec(str);
 console.log(result);
 

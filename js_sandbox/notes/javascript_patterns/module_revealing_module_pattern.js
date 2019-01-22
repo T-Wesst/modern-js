@@ -29,6 +29,7 @@ UiCtrl.callChangeText(); // logs hello world and changes h1 to hello world
 
 //  REVEALING MODULE PATTERN
 const ItemCtrl = (function(){
+  // Private
   let data = [];
   function add(item){
     data.push(item);
@@ -42,6 +43,7 @@ const ItemCtrl = (function(){
   }
 
   return {
+    // Public, if removed becomes private
     add: add,
     get: get
   }

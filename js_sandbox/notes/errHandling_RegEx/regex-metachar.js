@@ -1,9 +1,10 @@
 let regex;
 // literal characters
 regex = /hello/;
-regex = /hello/i;
+regex = /hello/i; // i flag = case insensitive
+regex = /hello/g; // g flag = global search
 
-// metacharacter symbols
+// meta character symbols
 regex = /^h/i; // must start with
 regex = /world$/i; // must end with
 regex = /^hello$/i; // must start and end with
@@ -12,7 +13,7 @@ regex = /h*llo/i; // matches any character 0 or more times
 regex = /gra?e?y/i; // optional character
 regex = /gra?e?y\?/i; // escape character
 
-// Brackets [] - chracter sets
+// Brackets [] - character sets
 regex = /gr[ae]y/i; // must be an a or e
 regex = /[GF]ray/; // must be G or F
 regex = /[^GF]ray/i; // match anything except G or F
@@ -45,7 +46,7 @@ regex = /x(?=y)/; // match x only if followed by y
 regex = /x(?!y)/; // match x only if NOT followed by y
 
 // string to match
-const str = "Hello World";
+const str = 'Hello World';
 // log resulta
 const result = regex.exec(str);
 console.log(result);

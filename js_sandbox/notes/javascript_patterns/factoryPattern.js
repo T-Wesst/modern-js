@@ -1,1 +1,47 @@
-// Used to manage and manipulate collections of objects that are different but have many common charactersist such as a member.
+// Used to manage and manipulate collections of objects that are different but have many common characteristics such as a member.
+
+function memberFactory() {
+  this.createMember = function(name, type) {
+    let member;
+    if (type === 'simple') {
+      member = new SimpleMembership(name);
+    } else if (type === 'standard') {
+      member = new StandardMembership(name);
+    } else if (type === 'super') {
+      member = new SuperMembership(name);
+    }
+    member.type = type;
+    member.define = function() {
+      console.log(`${this.name} (${this.type}): ${this.cost}`);
+    };
+    return member;
+  };
+}
+
+const SimpleMembership = function(name) {
+  this.name = name;
+  this.cost = '$5';
+};
+
+const StandardMembership = function(name) {
+  this.name = name;
+  this.cost = '$15';
+};
+
+const SuperMembership = function(name) {
+  this.name = name;
+  this.cost = '$25';
+};
+
+const members = [];
+const factory = new MemberFactory();
+members.push(factory.createMember('tyroo', 'simple'));
+members.push(factory.createMember('mike', 'standard'));
+members.push(factory.createMember('pete', 'super'));
+
+// console.log(members); logs SimpleMembership, index, cost and name
+
+// logs name, type and cost
+members.forEach(function(member) {
+  member.define();
+});

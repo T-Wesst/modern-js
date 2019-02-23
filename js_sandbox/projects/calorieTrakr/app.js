@@ -63,6 +63,16 @@ const ItemCtrl = (function() {
       });
       return found;
     },
+    deleteItem: function(id) {
+      // get id's
+      const ids = data.items.map(function(item) {
+        return item.id;
+      });
+      // get index
+      const index = ids.indexOf(id);
+      // remove item
+      data.items.splice(index, 1);
+    },
     setCurrentItem: function(item) {
       data.currentItem = item;
     },
@@ -221,6 +231,10 @@ const App = (function(ItemCtrl, UICtrl) {
     document
       .querySelector(UISelectors.updateBtn)
       .addEventListener('click', itemUpdateSubmit);
+    // delete item event
+    document
+      .querySelector(UISelectors.deleteBtn)
+      .addEventListener('click', itemDeleteSubmit);
     // back button event
     document
       .querySelector(UISelectors.backBtn)
@@ -277,6 +291,14 @@ const App = (function(ItemCtrl, UICtrl) {
     UICtrl.showTotalCalories(totalCalories);
     UICtrl.clearEditState();
 
+    e.preventDefault();
+  };
+  // delete button event
+  const itemDeleteSubmit = function(e) {
+    // get current item
+    const currentItem = ItemCtrl.getCurrentItem();
+    // delete from data structure
+    ItemCtrl.deleteItem(currentItem.id);
     e.preventDefault();
   };
   // Public methods

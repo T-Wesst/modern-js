@@ -1,23 +1,23 @@
 // Storage Controller
 const StorageCtrl = (function() {
-  // public methods
+  // Public methods
   return {
     storeItem: function(item) {
       let items;
-      // check if any items in local storage
+      // Check if any items in local storage
       if (localStorage.getItem('items') === null) {
         items = [];
-        // push new item
+        // Push new item
         items.push(item);
-        // set local storage
+        // Set local storage
         localStorage.setItem('items', JSON.stringify(items));
       } else {
-        // get what is already in local storage
+        // Get what is already in local storage
         items = JSON.parse(localStorage.getItem('items'));
-        // push new item
-        items.push(newItem);
-        // reset local storage
-        localStorage.setItem('item', JSON.stringify(items));
+        // Push new item
+        items.push(item);
+        // Re set local storage
+        localStorage.setItem('items', JSON.stringify(items));
       }
     },
     getItemsFromStorage: function() {
@@ -43,11 +43,12 @@ const ItemCtrl = (function() {
 
   // Data Structure / State
   const data = {
-    items: [
-      // { id: 0, name: 'Steak Dinner', calories: 1200 },
-      // { id: 1, name: 'Cookie', calories: 400 },
-      // { id: 2, name: 'Eggs', calories: 300 }
-    ],
+    // items: [
+    //   // { id: 0, name: 'Steak Dinner', calories: 1200 },
+    //   // { id: 1, name: 'Cookie', calories: 400 },
+    //   // { id: 2, name: 'Eggs', calories: 300 }
+    // ],
+    items: StorageCtrl.getItemsFromStorage(),
     currentItem: null,
     totalCalories: 0
   };

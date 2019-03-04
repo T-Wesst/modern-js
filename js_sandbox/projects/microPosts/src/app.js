@@ -1,2 +1,2 @@
-import { person } from './lib';
-alert('hello');
+const greeting = 'hello there';
+console.log(greeting);

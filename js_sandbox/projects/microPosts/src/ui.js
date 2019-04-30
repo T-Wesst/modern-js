@@ -9,9 +9,9 @@ class UI {
   }
 
   showPosts(posts) {
-    let outPut = '';
+    let output = '';
     posts.forEach(post => {
-      outPut += `
+      output += `
       <div class="card mb-3">
         <div class="card-body">
           <h4 class="card-title">${post.title}</h4>
@@ -26,7 +26,39 @@ class UI {
       </div>
       `;
     });
-    this.post.innerHTML = outPut;
+    this.post.innerHTML = output;
+  }
+
+  showAlert(message, className) {
+    this.clearAlert();
+    // create div
+    const div = document.createElement('div');
+    // add class
+    div.className = className;
+    // add text
+    div.appendChild(document.createTextNode(message));
+    // get parent
+    const container = document.querySelector('.postsContainer');
+    // get posts
+    const posts = document.querySelector('#posts');
+    // insert alert div
+    container.insertBefore(div, posts);
+    // timeout
+    setTimeout(() => {
+      this.clearAlert();
+    }, 3000);
+  }
+
+  clearAlert() {
+    const currentAlert = document.querySelector('.alert');
+    if (currentAlert) {
+      currentAlert.remove();
+    }
+  }
+
+  clearFields() {
+    this.titleInput.value = '';
+    this.bodyInput.value = '';
   }
 }
 
